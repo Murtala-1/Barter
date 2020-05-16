@@ -1,10 +1,13 @@
 import React from 'react'
 import './App.css'
-import NavBars from './NavBarComponent/NavBars' 
-import HomePage from './HomePage'
-import BodyComponent from './Body/BodyComponent'
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
-import DifferentItems from './Body/DifferentItems'
+import NavBar from './NavBar'
+import JoinTrip from './JoinTrip'
+import Signup from './Signup'
+import {Switch, Route} from 'react-router-dom'
+import Index from './Login/Index';
+import ScheduleTrip from './ScheduleTrip'
+import Footer from './Footer'
+
 
 
 
@@ -12,16 +15,18 @@ import DifferentItems from './Body/DifferentItems'
 class App extends React.Component{
   render(){
     return (
-      <div className='p-2 m-0'>
-           <NavBars />
-           <Switch>
-             <Route path='/' exact>
-                <HomePage />   
-             </Route> 
-             <Route path="/product" component={BodyComponent}/> 
-             <Route path="/differentItem" component={DifferentItems}/>
-           </Switch>
-          
+      <div className='p-0 m-0' >
+       <NavBar />      
+      
+       <Switch>
+          <Route exact path='/'> 
+        <JoinTrip /> 
+          </Route>
+          <Route exact path='/signup' component={Signup}  />
+          <Route path='/login' component={Index} />
+          <Route path='/schedule_trip' component={ScheduleTrip} />
+          </Switch> 
+          <Footer />  
       </div>
     )
   }
