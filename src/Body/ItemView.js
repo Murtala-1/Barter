@@ -1,9 +1,9 @@
 import React from 'react'
 import {Card,Row, Col, FormGroup, Input, Button, CardHeader } from 'reactstrap'
-import ItemView from './ItemView'
+import { Link, withRouter } from 'react-router-dom';
 
 
-class DifferentItems extends React.Component {
+class ItemView extends React.Component {
     state={
         full_name: '',
         email: '',
@@ -11,17 +11,18 @@ class DifferentItems extends React.Component {
         country: '',
         city: '',
         user_state: '',
+      
     }
+   
     render(){
+       
         return (
-            <div>
+            <Card className='p-1'>
+                <CardHeader tag='h5'>Owner Info</CardHeader>
             <Row className="p-0 m-0">
                 <Col md={6}>
-                <Card className='p-1'>
-                <CardHeader tag='h5'>Your item Info</CardHeader>
-            <Row>
-                <Col md={6}>
-                    <img src={require('../images/Agricultural/ginger.jpg')} width='350em' />
+                    <img src={require('../images/Agricultural/maize.png')} width='350em' />
+               <Link className='text-white' to='/differentItem'> <Button className='btn-block'> Contact Owner</Button> </Link>
                   </Col>
                   
                     <Col lg={6} className='mt-3'>
@@ -30,7 +31,7 @@ class DifferentItems extends React.Component {
                       <Input
                         type="name"
                         name="full_name"
-                        placeholder="Adewale Muritala Akinyemi"
+                        placeholder="Mustapha Isa Toyin"
                         id="name"
                         onChange={this.onChange}
                         value={this.state.full_name}
@@ -55,11 +56,11 @@ class DifferentItems extends React.Component {
                       onChange={this.onChange}
                       value={this.state.user_address}
                       id="exampleAddress"
-                      placeholder="Sabo Bakin Zuwo Road Kano"
+                      placeholder="Kawo Bustop GRA area Kano"
                       disabled
                     />
                   </FormGroup>
-                <hr></hr>
+                  <hr></hr>
                   <FormGroup>
                     <Input
                       type="number"
@@ -67,7 +68,7 @@ class DifferentItems extends React.Component {
                       onChange={this.onChange}
                       value={this.state.city}
                       id="city"
-                      placeholder="$3000"
+                      placeholder="$2000"
                       disabled
                     />
                   </FormGroup>
@@ -93,18 +94,12 @@ class DifferentItems extends React.Component {
                       disabled
                     />
                   </FormGroup>
-
                   </Col>
-                </Row>
-             </Card>
-             </Col>
-             <Col sm={6}>
-                <ItemView />
-               </Col>
-             </Row> 
-             <center> <Button color='primary' className='mt-3'>Make Barter</Button>  </center>
-             </div>
+                
+          
+             </Row>
+             </Card>  
         )
     }
 }
-export default DifferentItems
+export default ItemView
