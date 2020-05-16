@@ -11,7 +11,14 @@ class DifferentItems extends React.Component {
         country: '',
         city: '',
         user_state: '',
+        different: ''
     }
+    handleDifferent = () =>{
+      this.setState(prev => ({
+        different: prev.different 
+      }))
+    }
+
     render(){
         return (
             <div>
@@ -69,6 +76,7 @@ class DifferentItems extends React.Component {
                       id="city"
                       placeholder="$3000"
                       disabled
+
                     />
                   </FormGroup>
                   <FormGroup>

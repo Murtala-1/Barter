@@ -1,6 +1,5 @@
 import React from 'react'
 import {Col, Navbar, Row, NavbarBrand, NavLink} from 'reactstrap'
-import FirstNav from './FirstNav'
 import SecondNav from './SecondNav'
 
 export default class NavBars extends React.Component {
@@ -14,7 +13,6 @@ export default class NavBars extends React.Component {
                 </NavbarBrand>
                 </Col>
                <Col md={8}>
-               <FirstNav/>
                 <SecondNav /> 
                  </Col>
                 </Row>

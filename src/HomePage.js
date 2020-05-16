@@ -8,14 +8,18 @@ export default class HomePage extends React.Component{
     email: '',
     user_address: '',
     password: '',
-
+    renderForm: true
   }
 
   onChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
-
+  handleForm = ()=> {
+    this.setState(prev=>({
+      renderForm: !prev.renderForm
+    }))
+  }
     render(){
         return (
             
@@ -28,11 +32,14 @@ export default class HomePage extends React.Component{
         services and goods for other services and goods in return. 
         The value of bartering items can be negotiated with the other party.</span>
           </Col>
-          <Col md={6}>
+          <Col md={6}> 
+          {this.state.renderForm ?
             <Card className='p-3'>
-          <CardHeader> Sign up</CardHeader>
+          <CardHeader tag='h6'> Sign up</CardHeader>
+          
           <Form>
           <Row>
+            
           <Col md={12} className='mt-3'>
                     <FormGroup>
                       <Input
@@ -83,11 +90,59 @@ export default class HomePage extends React.Component{
                 </Col>
                 <Col sm={12}>
                  <center> <Button type="danger">Sign up</Button></center>
+                 <center>
+                    <small>
+                        Have Account?{' '}
+                        <a className="text-danger" onClick={this.handleForm}>
+                          Log in
+                        </a>
+                      </small>
+                    </center>
                 </Col>
                 </Row>
           </Form>
-    
-            </Card>
+        </Card> :
+          <Card className="mt-5 p-4 ml-3">
+             <CardHeader tag='h6'> Log in</CardHeader>
+                <Form>
+                  <Row form>
+                    <Col md={12}>
+                      <FormGroup>
+                        <Input
+                          name="phone"
+                          value={this.state.phone}
+                          onChange={this.onChange}
+                          type="tel"
+                          placeholder="Phone Number"
+                        />
+                      </FormGroup>
+                    </Col>
+                    <Col md={12}>
+                      <FormGroup>
+                        <Input
+                          name="password"
+                          value={this.state.password}
+                          onChange={this.onChange}
+                          type="password"
+                          placeholder="Password"
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <center><Button type="danger">
+                    Log in
+                  </Button></center>
+                  <center>
+                    <small>
+                      Don't have Account?{' '}
+                      <a className="text-danger" onClick={this.handleForm}>
+                        Sign up
+                      </a>
+                    </small>
+                  </center>
+                </Form>
+              </Card>
+            }
           </Col>
           </Row>
         
