@@ -48,7 +48,7 @@ const LoginNavBar = (props) => {
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
-                  Logout
+                <Link  to='/'>  Log out</Link>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
@@ -61,4 +61,4 @@ const LoginNavBar = (props) => {
   );
 }
 
-export default LoginNavBar;
+export default withRouter(LoginNavBar);

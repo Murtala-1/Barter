@@ -1,6 +1,6 @@
 import React from 'react'
-import {Row, Col, Form, Input, FormGroup, Card, CardHeader} from 'reactstrap'
-import { Button } from 'antd';
+import {Row, Col, Form, Input, FormGroup, Card, CardHeader,Button} from 'reactstrap'
+import {Link} from 'react-router-dom'
 
 export default class HomePage extends React.Component{
   state={
@@ -8,7 +8,7 @@ export default class HomePage extends React.Component{
     email: '',
     user_address: '',
     password: '',
-
+    renderForm: true
   }
 
   onChange = (e) => {
@@ -16,6 +16,11 @@ export default class HomePage extends React.Component{
     this.setState({ [name]: value });
   };
 
+handleForm = ()=> {
+    this.setState(prev => ({
+      renderForm: !prev.renderForm
+    }))
+}
     render(){
         return (
             
@@ -29,6 +34,7 @@ export default class HomePage extends React.Component{
         The value of bartering items can be negotiated with the other party.</span>
           </Col>
           <Col md={6}>
+            {this.state.renderForm ?
             <Card className='p-3'>
           <CardHeader> Sign up</CardHeader>
           <Form>
@@ -82,12 +88,50 @@ export default class HomePage extends React.Component{
                   </FormGroup>
                 </Col>
                 <Col sm={12}>
-                 <center> <Button type="danger">Sign up</Button></center>
+                 <center> <Button color="primary">Sign up</Button></center>
                 </Col>
                 </Row>
+                <center> <small>Have account?</small> <small className="text-info"><a onClick={this.handleForm}>Log in</a></small> </center>
           </Form>
-    
-            </Card>
+          </Card>
+          :
+          <Card className="shadow w-100">
+                 <CardHeader tag="h6">Log in </CardHeader>
+                <Form className="m-2">
+                  <Row form>
+                    <Col md={12}>
+                      <FormGroup>
+                        <Input
+                          name="email"
+                          value={this.state.email}  onChange={this.onChange}
+                          type="email"
+                          placeholder="example@gmail.com"
+                        />
+                      </FormGroup>
+                    </Col>
+                    <Col md={12}>
+                      <FormGroup>
+                        <Input
+                          name="password"
+                          value={this.state.password}  onChange={this.onChange}
+                          type="password"
+                          placeholder="Password"
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                 <center><Link to="/product"> <Button color="primary">Log in</Button></Link></center>
+                  <center>
+                    <small>
+                      Don't have Account?{' '}
+                      <a className="text-info" onClick={this.handleForm}>
+                        Sign up
+                      </a>
+                    </small>
+                  </center>
+                </Form>
+              </Card>
+              }
           </Col>
           </Row>
         
