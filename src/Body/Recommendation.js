@@ -43,7 +43,8 @@ class Recommendation extends React.Component{
                 <Card className='m-0 p-0'>
                     <CardHeader className='d-flex justify-content-between'>
                         <h5> Recommendations </h5>
-                        <FormGroup className='m-0 p-0'>
+                    </CardHeader>
+                    <FormGroup className='m-1 p-0'>
                     <Input
                       type="search"
                       name="item_search"
@@ -53,7 +54,6 @@ class Recommendation extends React.Component{
                       placeholder="Search items"
                     />
                   </FormGroup>
-                    </CardHeader>
               {_CommodityData}
                 
                 </Card>

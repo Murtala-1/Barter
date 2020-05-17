@@ -1,8 +1,11 @@
 import React from 'react'
 import {Col, Navbar, Row, NavbarBrand, NavLink} from 'reactstrap'
 import SecondNav from './SecondNav'
+import LoginNavBar from './LoginNavBar'
+import { Route } from 'react-router-dom';
 
 export default class NavBars extends React.Component {
+   
     render(){
         return (
         
@@ -13,7 +16,11 @@ export default class NavBars extends React.Component {
                 </NavbarBrand>
                 </Col>
                <Col md={8}>
-                <SecondNav /> 
+                  
+                <SecondNav />
+        
+                <LoginNavBar/>
+            
                  </Col>
                 </Row>
          

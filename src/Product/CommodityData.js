@@ -1,6 +1,9 @@
 const CommodityData = [
     {
         id: 1,
+        name: 'Aminu Bin Ibrahim',
+        email: 'aminu@gmail.com',
+        price: 3000,
         image: require('../images/avater.webp'),
         item: 'Yam',
         address: 'Sabo Bakin suwo rd Kano',
@@ -8,6 +11,9 @@ const CommodityData = [
     },
     {
         id: 2,
+        name: 'Adewale Muritala Akinyemi',
+        email: 'adewalem@gmail.com',
+        price: 1000,
         image: require('../images/avater.webp'),
         item: 'Mango',
         address: 'Tauroni Market Kano',
@@ -15,6 +21,9 @@ const CommodityData = [
     },
     {
         id: 3,
+        name: 'Mustapha Isa Toyin',
+        email: 'emmaty@gmail.com',
+        price: 3000,
         image: require('../images/avater.webp'),
         item: 'Garri',
         address: 'Kawo bustop, GRA kano',
@@ -23,6 +32,9 @@ const CommodityData = [
 
     {
         id: 4,
+        name: 'Isa Abubakar Jesus',
+        email: 'issaboy@gmail.com',
+        price: 3000,
         image: require('../images/avater.webp'),
         item: 'Maggi',
         address: 'Mariri area kano state',

@@ -30,7 +30,7 @@ import {Row, Col, Form, Input, FormGroup, Card, CardHeader, Button} from 'reacts
               height: '20em'
             }}>
                  <Card className='p-3'  style={{top:'14em', position: 'relative'}}>
-                    <CardHeader tag='h5'> Create Profile</CardHeader>            
+                    <CardHeader tag='h5'> Create New Commodity</CardHeader>            
                     <Form >
                     <Row>
                     <Col md={12} className='mt-3'>
@@ -65,7 +65,7 @@ import {Row, Col, Form, Input, FormGroup, Card, CardHeader, Button} from 'reacts
                       onChange={this.onChange}
                       value={this.state.user_address}
                       id="exampleAddress"
-                      placeholder="Your address in details"
+                      placeholder="The Location in details"
                     />
                   </FormGroup>
                 </Col>

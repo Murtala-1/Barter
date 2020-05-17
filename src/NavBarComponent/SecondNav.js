@@ -35,9 +35,6 @@ const { SubMenu } = Menu;
                       <Menu.Item key="setting:4">Metals</Menu.Item>
                     </Menu.ItemGroup>
                   </SubMenu>
-                  <Menu.Item key="support">
-                  <Link to="/support"> Support </Link> 
-                    </Menu.Item>
                   <Menu.Item key="contact">
                    Contact
                   </Menu.Item>
