@@ -14,7 +14,7 @@ export default class MainBody extends React.Component{
  
     render(){
         return(
-            <Container className='m-2'>
+            
            <Row className="m-0 p-0">
                 <Col sm={8} className=''>
             <Switch>         
@@ -29,7 +29,7 @@ export default class MainBody extends React.Component{
              <Recommendation />
            </Col>
            </Row>
-           </Container>
+      
         )
     }
 }
